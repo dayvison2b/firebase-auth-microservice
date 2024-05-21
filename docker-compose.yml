@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  auth-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 5000:5000
+    volumes:
+      - ./src:/app/src
+      - ./tests:/app/tests
+    env_file:
+      - ./.env
+    command: npm start
