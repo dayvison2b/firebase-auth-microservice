@@ -16,6 +16,12 @@ jobs:
 
       - name: Run ESLint
         run: npm run lint
-
+        continue-on-error: true  # Continue the workflow even if ESLint encounters an error
+      
       - name: Run tests
         run: npm test
+        if: ${{ success() }}  # Only run tests if ESLint succeeded
+      
+      - name: Fail if ESLint or tests failed
+        run: exit 1
+        if: ${{ failure() }}  # Fail the workflow if either ESLint or tests failed
