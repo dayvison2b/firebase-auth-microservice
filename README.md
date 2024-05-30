@@ -1,8 +1,3 @@
-# Firebase Auth Microservice
-
-## Description
-This project is a stateless and lightweight microservice designed to handle user authentication within Firebase projects. It provides endpoints for user registration and authentication. Built using Node.js, it integrates seamlessly with Firebase Authentication and can be easily deployed as a Docker container.
-
 ## Features
 - User registration with name, email, and password.
 - Stateless.
